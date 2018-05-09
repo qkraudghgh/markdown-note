@@ -8,16 +8,16 @@
     <style>
       .markdown-body {
         box-sizing: border-box;
-	min-width: 200px;
-	max-width: 980px;
-	margin: 0 auto;
-	padding: 45px;
+	      min-width: 200px;
+	      max-width: 980px;
+	      margin: 0 auto;
+	      padding: 45px;
       }
 
       @media (max-width: 767px) {
         .markdown-body {
-	  padding: 15px;
-	}
+	        padding: 15px;
+	      }
       }
     </style>
   </head>
@@ -25,7 +25,7 @@
     <div id="markdown" class="markdown-body"><%= data %></div>
     <script type="text/javascript">
       const htmlText = document.getElementById("markdown");
-      const value = htmlText.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+      const value = htmlText.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
       const convertedHTML = marked(value);
       htmlText.innerHTML = convertedHTML;
       hljs.initHighlightingOnLoad();
